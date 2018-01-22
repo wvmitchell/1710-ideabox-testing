@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 
 class Form extends Component {
-  constructor(props) {
-    super(props) // this gives you this
+  constructor() {
+    super() // this gives you this
     this.state = {
       title: '',
       body: ''
@@ -16,7 +16,8 @@ class Form extends Component {
 
   submitIdea = (e) => {
     e.preventDefault()
-    this.props.handleSubmit(this.state)
+    const newIdea = Object.assign({ id: Date.now() }, this.state)
+    this.props.handleSubmit(newIdea)
   }
   render() {
     return (

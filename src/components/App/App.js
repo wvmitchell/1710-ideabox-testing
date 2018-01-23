@@ -20,9 +20,14 @@ class App extends Component {
     this.setState({ ideas })
   }
 
+  numIdeas(ideas) {
+  }
+
   render() {
     return (
       <div className="App">
+        <h1>My ideas</h1>
+        <h2>Num ideas: { this.numIdeas(this.state.ideas) }</h2>
         <Form handleSubmit={this.handleSubmit} />
         <CardContainer ideas={this.state.ideas}
                        removeIdea={this.removeIdea}/>
